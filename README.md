@@ -80,6 +80,8 @@ life-os/
 
 ## ⚡ Quick Start (Local + Vercel)
 
+> Note: This setup now deploys the FastAPI core API to Vercel. Legacy Docker Compose services (Open WebUI + LiteLLM) are no longer part of the default deployment flow.
+
 ```bash
 # 1. Clone the repo
 git clone https://github.com/tdisawas0github/aether-os.git
@@ -95,7 +97,7 @@ pip install -r requirements.txt
 # 4. Run the API locally
 uvicorn core.main:app --reload
 
-# 5. Open the magic
+# 5. Open the magic (while the uvicorn process is running)
 # → Core API health: http://localhost:8000/health
 ```
 
