@@ -50,8 +50,8 @@ It combines:
 | **AI Gateway** | LiteLLM                       | One API to rule all LLMs |
 | **Chat UI**    | Open WebUI (forked)           | Beautiful ChatGPT-like interface |
 | **Backend**    | FastAPI + Python              | Fast, modern, async |
-| **Database**   | SQLite (dev) → Postgres (prod)| Simple & powerful |
-| **Orchestration** | Docker Compose + Watchtower | Easy self-hosting + auto-updates |
+| **Database**   | SQLite (local dev) / Managed Postgres (Vercel prod) | Serverless-safe persistence |
+| **Deployment** | Vercel | Fast serverless deployment |
 | **Frontend**   | Streamlit / Gradio (planned)  | Quick beautiful dashboards |
 | **Knowledge**  | Obsidian / Markdown vault     | Future-proof second brain |
 | **Agents**     | Custom LangChain / CrewAI     | Multi-agent workflows |
@@ -70,7 +70,7 @@ life-os/
 ├── integrations/           # Notion, Gmail, Calendar, etc.
 ├── ui/                     # Custom dashboards & widgets
 ├── data/                   # Local databases & vaults
-├── docker-compose.yml
+├── vercel.json
 ├── .env.example
 ├── README.md
 └── requirements.txt
@@ -78,7 +78,7 @@ life-os/
 
 ---
 
-## ⚡ Quick Start (Self-Hosted)
+## ⚡ Quick Start (Local + Vercel)
 
 ```bash
 # 1. Clone the repo
@@ -89,19 +89,37 @@ cd aether-os
 cp .env.example .env
 # Edit .env with your API keys (OpenAI, Anthropic, etc.)
 
-# 3. Fire it up
-docker compose up -d life-os-core
+# 3. Install dependencies
+pip install -r requirements.txt
 
-# Optional: run full stack (Open WebUI + LiteLLM + backend)
-# docker compose up -d
+# 4. Run the API locally
+uvicorn core.main:app --reload
 
-# 4. Open the magic
+# 5. Open the magic (while the uvicorn process is running)
 # → Core API health: http://localhost:8000/health
-# → Open WebUI: http://localhost:8080
-# → Custom Dashboard: http://localhost:8501 (coming soon)
+# → API docs: http://localhost:8000/docs
 ```
 
-**That’s it.** Your personal life OS is now running locally.
+To deploy on Vercel:
+
+```bash
+vercel
+```
+
+**That’s it.** Your personal life OS API is now running locally and ready for Vercel.
+
+## 🔄 Migration from Docker Compose
+
+- The default deployment target is now Vercel for the FastAPI core API.
+- Open WebUI and LiteLLM are no longer shipped as default Compose services in this repo.
+- If you keep using Open WebUI/LiteLLM, host them separately and point them to your deployed API (for example: set Open WebUI `LITELLM_PROXY_URL` and LiteLLM upstream/base URL values to your Vercel endpoint).
+- If you are migrating existing Docker data, back up your old volumes first (`open-webui:/app/backend/data` and local `./data` SQLite files) before switching deployment.
+
+### Production database on Vercel
+
+- Do not rely on local SQLite files in production serverless environments.
+- Use a managed Postgres instance and set `DATABASE_URL` in Vercel project environment variables.
+- Keep SQLite only for local development runs.
 
 ---
 
