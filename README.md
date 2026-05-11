@@ -90,9 +90,13 @@ cp .env.example .env
 # Edit .env with your API keys (OpenAI, Anthropic, etc.)
 
 # 3. Fire it up
-docker compose up -d
+docker compose up -d life-os-core
+
+# Optional: run full stack (Open WebUI + LiteLLM + backend)
+# docker compose up -d
 
 # 4. Open the magic
+# → Core API health: http://localhost:8000/health
 # → Open WebUI: http://localhost:8080
 # → Custom Dashboard: http://localhost:8501 (coming soon)
 ```

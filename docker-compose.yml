@@ -38,8 +38,6 @@ services:
       - ./data:/app/data
     environment:
       - DATABASE_URL=sqlite:///./data/life_os.db
-    depends_on:
-      - litellm
     restart: unless-stopped
 
 volumes:
