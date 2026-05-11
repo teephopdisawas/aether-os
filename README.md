@@ -50,7 +50,7 @@ It combines:
 | **AI Gateway** | LiteLLM                       | One API to rule all LLMs |
 | **Chat UI**    | Open WebUI (forked)           | Beautiful ChatGPT-like interface |
 | **Backend**    | FastAPI + Python              | Fast, modern, async |
-| **Database**   | SQLite (dev) → Postgres (prod)| Simple & powerful |
+| **Database**   | SQLite (local dev) / Managed Postgres (Vercel prod) | Serverless-safe persistence |
 | **Deployment** | Vercel | Fast serverless deployment |
 | **Frontend**   | Streamlit / Gradio (planned)  | Quick beautiful dashboards |
 | **Knowledge**  | Obsidian / Markdown vault     | Future-proof second brain |
@@ -80,7 +80,7 @@ life-os/
 
 ## ⚡ Quick Start (Local + Vercel)
 
-> Note: This setup now deploys the FastAPI core API to Vercel. Legacy Docker Compose services (Open WebUI + LiteLLM) are no longer part of the default deployment flow. If you still need them, run and host those services independently and point them to this API.
+> Note: This setup now deploys the FastAPI core API to Vercel. Legacy Docker Compose services (Open WebUI + LiteLLM) are no longer part of the default deployment flow. If you still need them, run and host those services independently and point them to this API (for example: set Open WebUI `LITELLM_PROXY_URL` and LiteLLM upstream/base URL values to your deployed Vercel endpoint).
 
 ```bash
 # 1. Clone the repo
