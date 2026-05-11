@@ -9,22 +9,22 @@
 
 ### Product & Architecture
 - [x] ✅ Confirm single direction: custom web app
-- [ ] 📋 Define frontend-backend contract (core routes and data models)
-- [ ] 📋 Establish module boundaries for agents, integrations, and core services
-- [ ] 📋 Define environment strategy for local, preview, and production
+- [x] ✅ Define frontend-backend contract (core routes and data models)
+- [x] ✅ Establish module boundaries for agents, integrations, and core services
+- [x] ✅ Define environment strategy for local, preview, and production
 
 ### Backend Core (FastAPI)
 - [x] ✅ FastAPI scaffold in place
 - [x] ✅ Health endpoint (`GET /health`)
-- [ ] 📋 Base API versioning and route grouping
-- [ ] 📋 Shared response/error schema
-- [ ] 📋 Config and secrets loading hardening
+- [x] ✅ Base API versioning and route grouping
+- [x] ✅ Shared response/error schema
+- [x] ✅ Config and secrets loading hardening
 
 ### Frontend Web App (Custom)
-- [ ] 🔄 Initialize custom frontend app inside `ui/`
-- [ ] 📋 Create app shell (navigation, layout, auth gate placeholders)
-- [ ] 📋 Build dashboard baseline (empty-state + loading-state UX)
-- [ ] 📋 Connect frontend health/status check to backend
+- [x] ✅ Initialize custom frontend app inside `ui/`
+- [x] ✅ Create app shell (navigation, layout, auth gate placeholders)
+- [x] ✅ Build dashboard baseline (empty-state + loading-state UX)
+- [x] ✅ Connect frontend health/status check to backend
 
 ---
 
