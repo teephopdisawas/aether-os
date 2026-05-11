@@ -4,7 +4,6 @@ import os
 
 @dataclass(frozen=True)
 class AIConfig:
-    provider: str
     puter_js_enabled: bool
     puter_app_id: str | None
 
@@ -17,10 +16,10 @@ def load_ai_config() -> AIConfig:
     enabled = _is_truthy(os.getenv("PUTER_JS_ENABLED", "true"))
     app_id = os.getenv("PUTER_APP_ID") or None
     return AIConfig(
-        provider="puter_js",
         puter_js_enabled=enabled,
         puter_app_id=app_id,
     )
 
 
+AI_PROVIDER = "puter_js"
 AI_CONFIG = load_ai_config()

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from core.config import AI_CONFIG
+from core.config import AI_CONFIG, AI_PROVIDER
 
 app = FastAPI(title="Aether OS Core API", version="0.1.0")
 
@@ -13,7 +13,7 @@ async def health_check() -> dict[str, str]:
 @app.get("/config/ai")
 async def get_ai_config() -> dict[str, str | bool | None]:
     return {
-        "provider": AI_CONFIG.provider,
+        "provider": AI_PROVIDER,
         "puter_js_enabled": AI_CONFIG.puter_js_enabled,
         "puter_app_id": AI_CONFIG.puter_app_id,
     }
