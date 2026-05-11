@@ -16,6 +16,7 @@ The project is in early foundation stage.
 Implemented today:
 - FastAPI app scaffold in `/core/main.py`
 - Health endpoint: `GET /health`
+- AI config endpoint: `GET /config/ai` (Puter.js-only backend mode)
 - Vercel runtime entrypoint in `/api/index.py`
 - Vercel rewrite configuration in `/vercel.json`
 
@@ -65,6 +66,7 @@ uvicorn core.main:app --reload
 
 Open:
 - `http://localhost:8000/health`
+- `http://localhost:8000/config/ai`
 - `http://localhost:8000/docs`
 
 ---
