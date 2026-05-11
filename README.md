@@ -1,0 +1,161 @@
+# ✨ Life OS
+
+**Your Personal AI-Powered Life Operating System**  
+*One clean interface to rule your entire existence.*
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![Made with ❤️](https://img.shields.io/badge/made%20with-love-red)
+
+---
+
+## 🚀 What is Life OS?
+
+Life OS is a **self-hosted, AI-first operating system for your life**.
+
+Think of it as the ultimate personal productivity layer — but actually intelligent.
+
+It combines:
+- Multiple AI agents that actually *do* things for you
+- A beautiful unified dashboard
+- Your second brain (knowledge + tasks + habits)
+- Smart automations that run 24/7
+
+**Goal**: Turn your chaotic life into a smooth, well-oiled machine powered by AI.
+
+---
+
+## ✨ Core Features (Current + Planned)
+
+### Phase 1 (MVP)
+- **Daily Intelligence Agent** — wakes up with you, summarises your day, suggests priorities
+- **Habit & Mood Tracker** with AI insights ("you’re 40% more productive on days you run")
+- **Smart Second Brain** — chat with all your notes, tasks, and memories
+- **Unified Dashboard** — beautiful self-hosted UI (Open WebUI + custom widgets)
+- **Multi-LLM Support** via LiteLLM (Claude, GPT, Grok, local models, etc.)
+
+### Phase 2 (Coming soon)
+- Email + Calendar agent (read, summarise, auto-reply, schedule)
+- Finance & expense tracker with AI budgeting
+- Health & fitness integration (Whoop, Oura, Apple Health)
+- Project & goal management with automatic progress tracking
+- Voice interface (local Whisper + TTS)
+
+---
+
+## 🛠 Tech Stack
+
+| Layer          | Tool                          | Why |
+|----------------|-------------------------------|-----|
+| **AI Gateway** | LiteLLM                       | One API to rule all LLMs |
+| **Chat UI**    | Open WebUI (forked)           | Beautiful ChatGPT-like interface |
+| **Backend**    | FastAPI + Python              | Fast, modern, async |
+| **Database**   | SQLite (dev) → Postgres (prod)| Simple & powerful |
+| **Orchestration** | Docker Compose + Watchtower | Easy self-hosting + auto-updates |
+| **Frontend**   | Streamlit / Gradio (planned)  | Quick beautiful dashboards |
+| **Knowledge**  | Obsidian / Markdown vault     | Future-proof second brain |
+| **Agents**     | Custom LangChain / CrewAI     | Multi-agent workflows |
+
+---
+
+## 📁 Repository Structure
+
+```
+life-os/
+├── agents/                 # Individual AI agents
+│   ├── daily_intelligence/
+│   ├── habit_coach/
+│   └── knowledge_agent/
+├── core/                   # Main OS logic & orchestration
+├── integrations/           # Notion, Gmail, Calendar, etc.
+├── ui/                     # Custom dashboards & widgets
+├── data/                   # Local databases & vaults
+├── docker-compose.yml
+├── .env.example
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## ⚡ Quick Start (Self-Hosted)
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/tdisawas0github/aether-os.git
+cd aether-os
+
+# 2. Copy environment
+cp .env.example .env
+# Edit .env with your API keys (OpenAI, Anthropic, etc.)
+
+# 3. Fire it up
+docker compose up -d
+
+# 4. Open the magic
+# → Open WebUI: http://localhost:8080
+# → Custom Dashboard: http://localhost:8501 (coming soon)
+```
+
+**That’s it.** Your personal life OS is now running locally.
+
+---
+
+## 🔑 Environment Variables (example)
+
+```env
+# === Life OS Environment Variables ===
+# Copy this file to .env and fill in your keys
+
+# AI Provider Keys (add the ones you use)
+OPENAI_API_KEY=sk-your-openai-key-here
+ANTHROPIC_API_KEY=sk-ant-your-anthropic-key-here
+GROQ_API_KEY=gsk_your-groq-key-here
+
+# LiteLLM Settings
+LITELLM_MASTER_KEY=sk-1234-super-secret-change-me
+
+# Optional: Add more providers later
+# COHERE_API_KEY=...
+# MISTRAL_API_KEY=...
+```
+
+---
+
+## 🧠 Philosophy
+
+- **Privacy first** — everything runs on *your* hardware
+- **AI that actually helps** — not just chat, but agents that *act*
+- **Simple > Complex** — beautiful defaults, power users can go deep
+- **Future-proof** — markdown + local files everywhere
+
+---
+
+## 🤝 Contributing
+
+This is very early stage (alpha). PRs, ideas, and agent contributions are super welcome!
+
+Just open an issue with the tag `agent-idea` or `feature-request`.
+
+---
+
+## 📜 License
+
+MIT — do whatever you want, just don’t be evil.
+
+---
+
+**Built with ❤️ by thomelab-codes + friends**  
+*Making life actually manageable since 2026*
+
+---
+
+> “The best operating system for your life is the one that disappears into the background and just *works*."
+
+---
+
+**Star this repo if you want to see it become the ultimate life OS** ⭐
+
+---
+
+*Last updated: May 2026*
