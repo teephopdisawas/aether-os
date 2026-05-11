@@ -26,6 +26,7 @@ Implemented today:
 Aether OS will be delivered as a fully custom web app with:
 - Dedicated frontend application for dashboard, chat, and workflows
 - Backend APIs for agents, tasks, memory, and integrations
+- Puter.js-based AI integration for chat and agent intelligence
 - Shared data model and modular internal services
 - Deployment-first architecture for web environments
 

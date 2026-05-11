@@ -37,7 +37,7 @@
 
 ### AI Interaction Layer
 - [ ] 📋 Unified chat/workflow interface
-- [ ] 📋 Provider abstraction for model routing
+- [ ] 📋 Puter.js integration for model access and routing
 - [ ] 📋 Session memory model and retrieval pipeline
 
 ### Agent Execution
