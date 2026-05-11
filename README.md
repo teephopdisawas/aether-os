@@ -51,7 +51,7 @@ It combines:
 | **Chat UI**    | Open WebUI (forked)           | Beautiful ChatGPT-like interface |
 | **Backend**    | FastAPI + Python              | Fast, modern, async |
 | **Database**   | SQLite (dev) → Postgres (prod)| Simple & powerful |
-| **Orchestration** | Docker Compose + Watchtower | Easy self-hosting + auto-updates |
+| **Deployment** | Vercel | Fast serverless deployment |
 | **Frontend**   | Streamlit / Gradio (planned)  | Quick beautiful dashboards |
 | **Knowledge**  | Obsidian / Markdown vault     | Future-proof second brain |
 | **Agents**     | Custom LangChain / CrewAI     | Multi-agent workflows |
@@ -70,7 +70,7 @@ life-os/
 ├── integrations/           # Notion, Gmail, Calendar, etc.
 ├── ui/                     # Custom dashboards & widgets
 ├── data/                   # Local databases & vaults
-├── docker-compose.yml
+├── vercel.json
 ├── .env.example
 ├── README.md
 └── requirements.txt
@@ -78,7 +78,7 @@ life-os/
 
 ---
 
-## ⚡ Quick Start (Self-Hosted)
+## ⚡ Quick Start (Local + Vercel)
 
 ```bash
 # 1. Clone the repo
@@ -89,19 +89,23 @@ cd aether-os
 cp .env.example .env
 # Edit .env with your API keys (OpenAI, Anthropic, etc.)
 
-# 3. Fire it up
-docker compose up -d life-os-core
+# 3. Install dependencies
+pip install -r requirements.txt
 
-# Optional: run full stack (Open WebUI + LiteLLM + backend)
-# docker compose up -d
+# 4. Run the API locally
+uvicorn core.main:app --reload
 
-# 4. Open the magic
+# 5. Open the magic
 # → Core API health: http://localhost:8000/health
-# → Open WebUI: http://localhost:8080
-# → Custom Dashboard: http://localhost:8501 (coming soon)
 ```
 
-**That’s it.** Your personal life OS is now running locally.
+To deploy on Vercel:
+
+```bash
+vercel
+```
+
+**That’s it.** Your personal life OS API is now running locally and ready for Vercel.
 
 ---
 

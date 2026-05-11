@@ -8,7 +8,7 @@
 ## Phase 1 — MVP (Core Foundation)
 
 ### 🧩 Infrastructure & Setup
-- [x] ✅ Docker Compose base setup (`docker-compose.yml`)
+- [x] ✅ Vercel deployment base setup (`vercel.json`)
 - [x] ✅ Environment variable scaffolding (`.env.example`)
 - [x] ✅ Repository directory structure (`agents/`, `core/`, `ui/`, `integrations/`, `data/`)
 - [x] ✅ `requirements.txt` with all Python dependencies
