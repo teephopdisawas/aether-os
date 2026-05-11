@@ -113,6 +113,13 @@ vercel
 - The default deployment target is now Vercel for the FastAPI core API.
 - Open WebUI and LiteLLM are no longer shipped as default Compose services in this repo.
 - If you keep using Open WebUI/LiteLLM, host them separately and point them to your deployed API (for example: set Open WebUI `LITELLM_PROXY_URL` and LiteLLM upstream/base URL values to your Vercel endpoint).
+- If you are migrating existing Docker data, back up your old volumes first (`open-webui:/app/backend/data` and local `./data` SQLite files) before switching deployment.
+
+### Production database on Vercel
+
+- Do not rely on local SQLite files in production serverless environments.
+- Use a managed Postgres instance and set `DATABASE_URL` in Vercel project environment variables.
+- Keep SQLite only for local development runs.
 
 ---
 
