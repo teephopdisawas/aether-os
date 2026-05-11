@@ -80,7 +80,7 @@ life-os/
 
 ## ⚡ Quick Start (Local + Vercel)
 
-> Note: This setup now deploys the FastAPI core API to Vercel. Legacy Docker Compose services (Open WebUI + LiteLLM) are no longer part of the default deployment flow.
+> Note: This setup now deploys the FastAPI core API to Vercel. Legacy Docker Compose services (Open WebUI + LiteLLM) are no longer part of the default deployment flow. If you still need them, run and host those services independently and point them to this API.
 
 ```bash
 # 1. Clone the repo
@@ -99,6 +99,7 @@ uvicorn core.main:app --reload
 
 # 5. Open the magic (while the uvicorn process is running)
 # → Core API health: http://localhost:8000/health
+# → API docs: http://localhost:8000/docs
 ```
 
 To deploy on Vercel:
