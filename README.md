@@ -80,8 +80,6 @@ life-os/
 
 ## ⚡ Quick Start (Local + Vercel)
 
-> Note: This setup now deploys the FastAPI core API to Vercel. Legacy Docker Compose services (Open WebUI + LiteLLM) are no longer part of the default deployment flow. If you still need them, run and host those services independently and point them to this API (for example: set Open WebUI `LITELLM_PROXY_URL` and LiteLLM upstream/base URL values to your deployed Vercel endpoint).
-
 ```bash
 # 1. Clone the repo
 git clone https://github.com/tdisawas0github/aether-os.git
@@ -109,6 +107,12 @@ vercel
 ```
 
 **That’s it.** Your personal life OS API is now running locally and ready for Vercel.
+
+## 🔄 Migration from Docker Compose
+
+- The default deployment target is now Vercel for the FastAPI core API.
+- Open WebUI and LiteLLM are no longer shipped as default Compose services in this repo.
+- If you keep using Open WebUI/LiteLLM, host them separately and point them to your deployed API (for example: set Open WebUI `LITELLM_PROXY_URL` and LiteLLM upstream/base URL values to your Vercel endpoint).
 
 ---
 
